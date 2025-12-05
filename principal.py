@@ -256,7 +256,7 @@ if __name__ == "__main__":
     
 	history = modelo.fit(
 		datagen.flow(X_train, Y_train, batch_size=32),
-		epochs=20,
+		epochs=40,
 		validation_data=(X_test, Y_test),
 		callbacks=callbacks
 	)

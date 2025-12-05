@@ -1,14 +1,12 @@
-﻿tensorflow
+
+tensorflow==2.11.0
 opencv-python
-numpy
+numpy<2
 matplotlib
 scikit-learn
 seaborn
-gradio
-tensorflow
-opencv-python
-numpy
-matplotlib
-scikit-learn
-seaborn
-gradio
+gradio==6.0.2
+
+# Notes:
+# - TensorFlow pinned to 2.11.0 which is compatible with Python 3.10 on Windows.
+# - If you must use another TF version, adjust accordingly before recreating the venv.
