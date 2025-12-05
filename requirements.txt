@@ -1,0 +1,14 @@
+﻿tensorflow
+opencv-python
+numpy
+matplotlib
+scikit-learn
+seaborn
+gradio
+tensorflow
+opencv-python
+numpy
+matplotlib
+scikit-learn
+seaborn
+gradio
