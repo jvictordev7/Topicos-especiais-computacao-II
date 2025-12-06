@@ -48,6 +48,15 @@ temp/
 .env.*
 secrets.json
 
+# Project specific large files
+dataset_bruto/
+dataset_limpo/
+debug_visual/
+folhas_coleta/
+relatorio_final/modelo_ocr_v1.h5
+*.rar
+*.zip
+
 # Data and large outputs (do not commit your datasets or model checkpoints)
 dataset_bruto/
 dataset_limpo/
