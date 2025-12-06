@@ -1,2 +1,2 @@
-Acurácia Final: 97.40%
-Perda Final: 0.0910
+Acurácia Final: 96.35%
+Perda Final: 0.0783

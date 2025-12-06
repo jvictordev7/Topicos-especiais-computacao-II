@@ -5,47 +5,47 @@ Resumo das métricas e inspeção das principais confusões entre classes.
 ## Resumo de Métricas (extraído de resumo_metricas.txt)
 
 ```
-Acurcia Final: 98.44%
-Perda Final: 0.0506
+Acurácia Final: 97.40%
+Perda Final: 0.0910
 
 ```
 
 ## Matriz de Confusão (absoluto)
 
 ```
-  80    0    0    0    0    0    0    0    0    0    0    0
-   0   80    0    0    0    0    0    0    0    0    0    0
-   0    0   80    0    0    0    0    0    0    0    0    0
-   0    0    0   72    0    0    8    0    0    0    0    0
-   0    0    0    0   75    4    1    0    0    0    0    0
-   0    0    0    0    0   80    0    0    0    0    0    0
-   0    0    0    0    0    0   80    0    0    0    0    0
-   0    0    0    0    0    0    0   80    0    0    0    0
-   0    0    0    0    0    0    0    0   80    0    0    0
-   0    0    0    0    0    0    0    0    0   80    0    0
-   0    0    0    0    0    0    0    0    0    0   80    0
-   0    0    0    0    0    0    0    0    0    0    0   80
+  17    0    0    0    0    0    0    0    0    0    0    0
+   0   11    0    0    0    0    0    0    0    0    0    0
+   0    0   13    0    0    0    0    0    0    0    0    0
+   0    0    0   15    0    0    3    0    0    0    0    0
+   0    0    0    0   14    0    0    0    0    0    0    0
+   0    0    0    0    0   13    0    0    0    0    0    0
+   0    0    0    4    0    0   16    0    0    0    0    0
+   0    0    0    0    0    0    0   22    0    0    0    0
+   0    0    0    0    0    0    0    0   18    0    0    0
+   0    0    0    0    0    0    0    0    0   12    0    0
+   0    0    0    0    0    0    0    0    0    0   14    0
+   0    0    0    0    0    0    0    0    0    0    0   20
 
 ```
 
 ## Maiores confusões (classe_real -> classe_prevista : contagem)
 
-- **D** -> **0** : 8 imagens
-- **E** -> **F** : 4 imagens
-- **E** -> **0** : 1 imagens
+- **D** -> **0** : 3 imagens
+- **0** -> **D** : 4 imagens
+- Demais classes praticamente sem confusão (linhas e colunas quase diagonais).
 
 ## Interpretação e hipóteses
 
-- Verifiquem se as confusões listadas acima correspondem a padrões visuais (ex.: traços abertos, bolinhas que confundem D e 0, etc.).
-- Possíveis causas: falta de amostras, traço muito fino, recortes que cortam partes do caractere, ruído de digitalização.
+- As confusões D↔0 indicam que em alguns recortes o “D” ficou mais redondo ou fechado, lembrando um “0”, e em outros o “0” pode ter gancho lateral lembrando “D”.
+- Possíveis causas: variação de traço (muito fino ou muito grosso), cortes nas bordas (recorte apertado) e falta de exemplos variados desses dois caracteres.
 
 ## Recomendações práticas para melhorar o desempenho
 
-- Recolher mais amostras especificamente para os pares mais confundidos (p.ex. se D->0 ocorrer muito, coletar mais D e 0 em variedades).
-- Aplicar data augmentation focada: variar espessura (dilate/erode), rotações pequenas, variações de brilho/contraste.
-- Experimentar aumentar a capacidade do modelo: adicionar filtros, ou treinar mais epochs com EarlyStopping.
-- Tentar técnicas de pre-processamento específicas por classe (ex.: normalização de proporção, remoção de loops).
-- Se persistir confusão entre letras e números, considerar treinar um ensemble ou um classificador secundário entre os pares mais confundidos.
+- Coletar mais amostras de D e 0, variando espessura e estilos, e reprocessar com o robô.
+- Data augmentation focada nesses pares: dilate/erode, rotações leves, shifts pequenos.
+- Revisar recortes de D e 0 para garantir que não haja cortes laterais; ajustar margens se necessário.
+- Treinar mais algumas épocas (com EarlyStopping) ou aumentar filtros no último bloco convolucional para maior capacidade.
+- Se persistir, usar um classificador auxiliar só para decidir entre D e 0.
 
 ## Próximos passos sugeridos para entrega
 

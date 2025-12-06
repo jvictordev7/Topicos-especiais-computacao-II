@@ -1,7 +1,0 @@
-image,output,timestamp
-,"{""label"": null, ""confidences"": null}",2025-12-05 13:34:55.870510
-,"{""label"": null, ""confidences"": null}",2025-12-05 13:43:26.585271
-,"{""label"": null, ""confidences"": null}",2025-12-05 13:43:27.567353
-,"{""label"": null, ""confidences"": null}",2025-12-05 14:21:32.932519
-,"{""label"": null, ""confidences"": null}",2025-12-05 14:21:37.245161
-.gradio\flagged\image\1391d655850a678d3af6\folha_01.jpg,"{""label"": ""3"", ""confidences"": [{""label"": ""3"", ""confidence"": 0.43375641107559204}, {""label"": ""E"", ""confidence"": 0.24117371439933777}, {""label"": ""5"", ""confidence"": 0.17818951606750488}]}",2025-12-05 15:07:46.898225

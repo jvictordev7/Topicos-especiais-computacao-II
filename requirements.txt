@@ -1,5 +1,5 @@
 
-tensorflow==2.11.0
+tensorflow>=2.16.0
 opencv-python
 numpy<2
 matplotlib
@@ -8,5 +8,5 @@ seaborn
 gradio==6.0.2
 
 # Notes:
-# - TensorFlow pinned to 2.11.0 which is compatible with Python 3.10 on Windows.
+# - TensorFlow updated to >=2.16.0 for compatibility with Python 3.10 and newer dependencies.
 # - If you must use another TF version, adjust accordingly before recreating the venv.
